@@ -3,9 +3,9 @@
   "description": "Simple hello world sample in Node",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.html"
   },
   "engines": {
     "node": ">=16.0.0"
