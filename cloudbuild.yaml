@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', '-r', '.', 'gs://qubo-city-static/']
+
+images: ['gcr.io/qubo-city/qubo-city-app']
