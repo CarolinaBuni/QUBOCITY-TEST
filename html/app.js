@@ -1,5 +1,5 @@
 "use strict";
-let markers = [];
+
 function initMap() {
   const myLatLng = {
     lat: 40.052364349365234,
@@ -13,24 +13,23 @@ function initMap() {
     streetViewControl: false
   });
 
-  // Agregar evento de clic al marcador
+  // Define la URL de la imagen del nuevo icono
+  const customIconUrl = './assets/qubonegro.svg'; // Reemplaza con la URL de tu imagen
+
+  // Crea un nuevo marcador con el icono personalizado
   const marker = new google.maps.Marker({
     position: myLatLng,
     map,
     title: "My location",
-    icon: "./assets/qubonegro.svg"
-  });
-let infoBoxOpen = false;
-
-  marker.addListener("click", () => {
-    if (infoBoxOpen) {
-      document.getElementById("info-box").style.display = "none";
-      infoBoxOpen = false;
-    } else {
-      document.getElementById("info-box").style.display = "block";
-      infoBoxOpen = true;
-    }
+    icon: customIconUrl
   });
 
-  markers.push(marker);
+  // Agrega un evento click al marcador
+  marker.addListener("click", function() {
+    // Define la URL de la página web que deseas abrir
+    const webpageUrl = 'https://www.spatial.io/s/Qubo-Factory-Meeting-Room-650d7b39fa3720c215733286?share=6752416412510878923'; // Reemplaza con la URL de tu página web
+
+    // Abre la página web en una nueva ventana o pestaña
+    window.open(webpageUrl, '_blank');
+  });
 }
